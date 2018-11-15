@@ -24,6 +24,13 @@ app.post('/', (req, res) => {
     }
   }
 
+  else if (intentName === 'test') {
+    console.log("ok test");
+    response = {
+      fulfillmentText: "test",
+    }
+  }
+
   else if (intentName === 'LVMH') {
 
 const rp = require('request-promise');
