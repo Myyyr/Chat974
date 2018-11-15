@@ -4,6 +4,8 @@ let express = require('express')
 let app = express()
 let bodyParser = require('body-parser')
 
+var x = "j'aime LVMH";
+
 // These two following lines ensures that every incomming request is parsed to json automatically
 app.use(bodyParser.urlencoded({ extended: 'true' }))
 app.use(bodyParser.json())
@@ -26,9 +28,6 @@ app.post('/', (req, res) => {
 
   else if (intentName === 'test') {
 
-    const cheerio = require('cheerio');
-    const request = require('request');
-
     var y = "lalala"
     response = {
       fulfillmentText: y,
@@ -48,9 +47,7 @@ request({
     if (err) return console.error(err);
 
     let $ = cheerio.load(body);
-
-    console.log($('.informationlvmh').text());
-    var x = $('.informationlvmh').text();
+    x = $('.informationlvmh').text();
 
 });
 
