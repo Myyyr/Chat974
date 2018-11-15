@@ -25,7 +25,6 @@ app.post('/', (req, res) => {
   }
 
   else if (intentName === 'test') {
-    console.log("ok test");
     response = {
       fulfillmentText: "test",
     }
@@ -33,24 +32,23 @@ app.post('/', (req, res) => {
 
   else if (intentName === 'LVMH') {
 
-const rp = require('request-promise');
 const cheerio = require('cheerio');
-const options = {
-  uri: `http://themyr.iiens.net/`,
-  transform: function (body) {
-    return cheerio.load(body);
-  }
-};
+const request = require('request');
 
-rp(options)
-  .then(($) => {
-    console.log("ok");
-    console.log($('.informationlvmh', html).text());
-    var x = $('.informationlvmh', html).text();
-  })
-  .catch((err) => {
-    console.log(err);
+request({
+    method: 'GET',
+    url: 'http://themyr.iiens.net/'
+}, (err, res, body) => {
+
+    if (err) return console.error(err);
+
+    let $ = cheerio.load(body);
+
+    console.log($('.informationlvmh').text());
+    var x = $('.informationlvmh').text();
+
 });
+
 
     response = {
       fulfillmentText: x,
