@@ -26,21 +26,24 @@ app.post('/', (req, res) => {
 
   else if (intentName === 'LVMH') {
 
-
 const rp = require('request-promise');
-const $ = require('cheerio');
-const url = 'http://themyr.iiens.net/';
+const cheerio = require('cheerio');
+const options = {
+  uri: `http://themyr.iiens.net/`,
+  transform: function (body) {
+    return cheerio.load(body);
+  }
+};
 
-rp(url)
-  .then(function(html) {
-    console.log("ok");
+rp(options)
+  .then(($) => {
+    console.log($);
     console.log($('.informationlvmh', html).text());
     let x = $('.informationlvmh', html).text();
   })
-  .catch(function(err) {
+  .catch((err) => {
+    console.log(err);
 });
-
-
 
     response = {
       fulfillmentText: x,
