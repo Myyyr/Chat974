@@ -4,7 +4,7 @@ let express = require('express')
 let app = express()
 let bodyParser = require('body-parser')
 
-var x = "j'aime LVMH";
+var x = "vive LVMH";
 
 // These two following lines ensures that every incomming request is parsed to json automatically
 app.use(bodyParser.urlencoded({ extended: 'true' }))
@@ -28,13 +28,14 @@ app.post('/', (req, res) => {
 
   else if (intentName === 'test') {
 
-    var y = "lalala"
+    var y = "test"
     response = {
       fulfillmentText: y,
     }
   }
 
   else if (intentName === 'LVMH') {
+
 
 const cheerio = require('cheerio');
 const request = require('request');
@@ -46,11 +47,10 @@ request({
 
     if (err) return console.error(err);
 
-    let $ = cheerio.load(body);
-    x = $('.informationlvmh').text();
+    var $ = cheerio.load(body);
+    x = $('.informationlvmh').attr('title');
 
 });
-
 
     response = {
       fulfillmentText: x,
