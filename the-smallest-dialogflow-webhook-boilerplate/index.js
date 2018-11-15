@@ -24,7 +24,7 @@ app.post('/', (req, res) => {
     }
   }
 
-  if else (intentName === 'LVMH') {
+  else if (intentName === 'LVMH') {
     response = {
       fulfillmentText: "LVMH c'est la vie",
     }
