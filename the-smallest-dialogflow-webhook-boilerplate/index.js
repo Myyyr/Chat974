@@ -25,8 +25,9 @@ app.post('/', (req, res) => {
   }
 
   else if (intentName === 'test') {
+    var y = "lalala"
     response = {
-      fulfillmentText: "test",
+      fulfillmentText: y,
     }
   }
 
