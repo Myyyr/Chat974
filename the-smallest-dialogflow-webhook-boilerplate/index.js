@@ -25,8 +25,23 @@ app.post('/', (req, res) => {
   }
 
   else if (intentName === 'LVMH') {
+
+
+const rp = require('request-promise');
+const $ = require('cheerio');
+const url = 'http://themyr.iiens.net/';
+
+rp(url)
+  .then(function(html) {
+    let x = $('.informationlvmh', html).text();
+  })
+  .catch(function(err) {
+});
+
+
+
     response = {
-      fulfillmentText: "LVMH c'est la vie",
+      fulfillmentText: x,
     }
   }
 
