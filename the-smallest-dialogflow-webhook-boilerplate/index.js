@@ -24,11 +24,17 @@ app.post('/', (req, res) => {
     }
   }
 
+  if else (intentName === 'LVMH') {
+    response = {
+      fulfillmentText: "LVMH c'est la vie",
+    }
+  }
+
   res.json(response);
 })
 
 app.get('/health', (req, res) => {
-  res.send('chat')
+  res.send('chatbot')
 });
 
 let port = process.env.PORT;
