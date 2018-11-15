@@ -37,9 +37,9 @@ const options = {
 
 rp(options)
   .then(($) => {
-    console.log($);
+    console.log("ok");
     console.log($('.informationlvmh', html).text());
-    let x = $('.informationlvmh', html).text();
+    var x = $('.informationlvmh', html).text();
   })
   .catch((err) => {
     console.log(err);
