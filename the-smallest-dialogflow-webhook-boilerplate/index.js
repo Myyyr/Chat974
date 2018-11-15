@@ -25,6 +25,10 @@ app.post('/', (req, res) => {
   }
 
   else if (intentName === 'test') {
+
+    const cheerio = require('cheerio');
+    const request = require('request');
+
     var y = "lalala"
     response = {
       fulfillmentText: y,
