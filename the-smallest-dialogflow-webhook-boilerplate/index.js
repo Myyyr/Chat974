@@ -33,6 +33,8 @@ const url = 'http://themyr.iiens.net/';
 
 rp(url)
   .then(function(html) {
+    console.log("ok");
+    console.log($('.informationlvmh', html).text());
     let x = $('.informationlvmh', html).text();
   })
   .catch(function(err) {
