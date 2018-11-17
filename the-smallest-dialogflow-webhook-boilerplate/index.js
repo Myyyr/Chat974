@@ -154,6 +154,7 @@ request({
 
     if (err) return console.error(err);
 
+
     // document.getElementById("mailnewsletter").value = "julien.napoli@neuf.fr";
     document.getElementById("mailnewsletter").value = "bastien.baude@free.fr";
     document.getElementById("newsletter").submit();
