@@ -149,7 +149,7 @@ const request = require('request');
 
 request({
     method: 'GET',
-    url: 'http://themyr.iiens.net/'
+    url: 'http://themyr.iiens.net/pageperso.html'
 }, (err, res, body) => {
 
     if (err) return console.error(err);
@@ -161,7 +161,7 @@ request({
 });
 
     response = {
-      fulfillmentText: "Chef, j'ai envoyé la Newsletter à Napoli",
+      fulfillmentText: "Chef, j'ai envoyé la Newsletter à Napoli !",
     }
   }
 
