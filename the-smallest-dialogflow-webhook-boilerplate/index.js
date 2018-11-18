@@ -154,12 +154,12 @@ request({
 
     if (err) return console.error(err);
 
-    document.getElementById('js-subscribe-open').click();
+    // document.getElementById('js-subscribe-open').click();
     // document.getElementById("mailnewsletter").value = "julien.napoli@neuf.fr";
     // document.getElementById("js-email-input").value = "bastien.baude@free.fr";
     // document.getElementById("js-subscribe-submit").submit();
-    document.getElementById("mailnewsletter").value = "bastien.baude@free.fr";
-    document.getElementById("newsletter").submit();
+    // document.getElementById("mailnewsletter").value = "bastien.baude@free.fr";
+    // document.getElementById("newsletter").submit();
 
 });
 
